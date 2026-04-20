@@ -35,6 +35,7 @@ Uso de Media Queries para adaptar el diseño a distintos dispositivos.
 📱 Diseño responsive
 
 Diseño adaptable a:
+
 Móvil 📱
 
 Tablet 💻
