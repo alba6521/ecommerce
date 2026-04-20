@@ -36,5 +36,7 @@ Uso de Media Queries para adaptar el diseño a distintos dispositivos.
 
 Diseño adaptable a:
 Móvil 📱
+
 Tablet 💻
+
 Escritorio 🖥️
