@@ -11,7 +11,7 @@ Aplicar la metodología Mobile First, desarrollando primero para dispositivos m�
 🛠️ Tecnologías
 
 HTML5
-CSS3
+CSS
 JavaScript
 
 📋 Requisitos del Proyecto
