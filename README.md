@@ -9,7 +9,6 @@ Construir un diseño responsivo que funcione en móvil, tablet y escritorio.
 Aplicar la metodología Mobile First, desarrollando primero para dispositivos móviles y escalando a pantallas mayores.
 
 🛠️ Tecnologías
-
 HTML5
 CSS
 JavaScript
