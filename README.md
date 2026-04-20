@@ -19,6 +19,7 @@ JavaScript
 📋 Requisitos del Proyecto
 
 🛒 Funcionalidades en JavaScript
+
 Gestión del carrito mediante una función que reciba el ID del producto y lo almacene en un array.
 Cálculo del total del carrito sumando los precios de los productos.
 Filtrado de productos por categoría.
@@ -26,11 +27,13 @@ Ordenación de productos de menor a mayor precio utilizando .sort().
 Simulación de sesión de usuario (login básico o almacenamiento local).
 
 🎨 Maquetación y estilos
+
 Uso de CSS Grid para la estructura del layout.
 Implementación de variables CSS para mantener consistencia en colores, tamaños y estilos.
 Uso de Media Queries para adaptar el diseño a distintos dispositivos.
 
 📱 Diseño responsive
+
 Diseño adaptable a:
 Móvil 📱
 Tablet 💻
