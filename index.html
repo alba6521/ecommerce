@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verdelia — Plantas & Jardín</title>
+
+  <!--Tipografías de Google Fonts-->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!--CABECERA-->
+  <header class="cabecera">
+    <div class="cabecera__logo">Verde<span>lia</span></div>
+    <div class="cabecera__espaciador"></div>
+
+    <!-- Botón de sesión: muestra el avatar y el nombre del usuario -->
+    <button class="cabecera__usuario" id="boton-usuario" aria-label="Sesión de usuario">
+      <span class="cabecera__avatar" id="avatar-usuario">?</span>
+      <span id="nombre-usuario"></span>
+    </button>
+
+    <!-- Botón del carrito con contador de artículos -->
+    <button class="boton-carrito" id="boton-carrito" aria-label="Abrir carrito">
+      🛒
+      <span class="contador-carrito" id="contador-carrito">0</span>
+    </button>
+  </header>
+
+  <!--SECCIÓN HERO -->
+  <section class="hero">
+
+    <!-- Columna izquierda: texto y llamada a la acción -->
+    <div class="hero__texto">
+      <p class="hero__etiqueta">Colección primavera 2026</p>
+      <h1 class="hero__titulo">La naturaleza <em>en tu hogar</em></h1>
+      <p class="hero__subtitulo">
+        Plantas cuidadas con mimo, herramientas premium y todo lo que tu jardín
+        necesita para florecer.
+      </p>
+      <a href="#catalogo" class="boton-principal">Explorar colección ↓</a>
+    </div>
+
+    <div class="hero__visual">
+      <div class="hero__fondo"></div>
+      <div class="hero__circulos"></div>
+      <img
+        class="hero__planta-img"
+        src="resources/hero-planta.png"
+        alt="Planta decorativa en maceta"
+        
+      />
+    </div>
+
+  </section>
+
+  <!--BARRA DE HERRAMIENTAS (filtros + orden)-->
+  <section id="catalogo">
+    <div class="barra-herramientas">
+      <h2 class="barra-herramientas__titulo">Nuestro catálogo</h2>
+
+      <!-- Botones de filtro por categoría (generados por JS) -->
+      <div
+        class="contenedor-filtros"
+        id="contenedor-filtros"
+        role="group"
+        aria-label="Filtrar por categoría"
+      ></div>
+
+      <!-- Selector de ordenamiento -->
+      <select class="selector-orden" id="selector-orden" aria-label="Ordenar productos">
+        <option value="defecto">Ordenar: Destacados</option>
+        <option value="precio-asc">Precio: menor a mayor</option>
+        <option value="precio-desc">Precio: mayor a menor</option>
+        <option value="nombre-az">Nombre: A-Z</option>
+      </select>
+    </div>
+  </section>
+
+  <!--CUADRÍCULA DE PRODUCTOS (generada por JS) -->
+  <main
+    class="cuadricula-productos"
+    id="cuadricula-productos"
+    role="list"
+    aria-live="polite"
+  ></main>
+
+  <!--PANEL LATERAL DEL CARRITO-->
+
+  <!-- Fondo oscuro que aparece detrás del panel -->
+  <div class="fondo-carrito" id="fondo-carrito" ></div>
+
+  <!-- Panel deslizante del carrito - contenido complementario -->
+  <aside class="panel-carrito" id="panel-carrito" aria-label="Carrito de compra">
+
+    <!-- Cabecera del panel -->
+    <div class="panel-carrito__cabecera">
+      <span class="panel-carrito__titulo">Mi carrito</span>
+      <button class="boton-cerrar-carrito" id="boton-cerrar-carrito" aria-label="Cerrar carrito">✕</button>
+    </div>
+
+    <!-- Lista de artículos (se rellena con JS) -->
+    <div class="lista-carrito" id="lista-carrito"></div>
+
+    <!-- Pie con el resumen de costes y botones de acción -->
+    <div class="pie-carrito" id="pie-carrito" style="display:none">
+      <div class="resumen-carrito" id="resumen-carrito"></div>
+      <button class="boton-comprar" id="boton-comprar">Finalizar compra →</button>
+      <button class="boton-vaciar" id="boton-vaciar">Vaciar carrito</button>
+    </div>
+
+  </aside>
+
+  <!-- INICIO DE SESIÓN -->
+  <div
+    class="fondo-modal"
+    id="fondo-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="titulo-modal"
+  >
+    <div class="modal">
+
+      <!-- Botón de cierre en la esquina superior derecha -->
+      <button class="boton-cerrar-modal" id="boton-cerrar-modal" aria-label="Cerrar modal">✕</button>
+
+      <!-- Logo y descripción -->
+      <p class="modal__logo">Verde<span>lia</span></p>
+      <p class="modal__subtitulo" id="titulo-modal">
+        Accede a tu cuenta para disfrutar de toda la experiencia
+      </p>
+
+      <!-- Formulario de inicio de sesión -->
+      <div id="formulario-login">
+
+        <div class="grupo-campo">
+          <label class="etiqueta-campo" for="campo-nombre">Nombre</label>
+          <input
+            class="campo-formulario"
+            type="text"
+            id="campo-nombre"
+            autocomplete="name"
+          />
+        </div>
+
+        <div class="grupo-campo">
+          <label class="etiqueta-campo" for="campo-correo">Correo electrónico</label>
+          <input
+            class="campo-formulario"
+            type="email"
+            id="campo-correo"
+            autocomplete="email"
+          />
+        </div>
+
+        <div class="grupo-campo">
+          <label class="etiqueta-campo" for="campo-clave">Contraseña</label>
+          <input
+            class="campo-formulario"
+            type="password"
+            id="campo-clave"
+            autocomplete="current-password"
+          />
+        </div>
+
+        <p class="pista-formulario">Contraseña debe contener cualquier texto de 4+ caracteres.</p>
+
+        <button class="boton-iniciar-sesion" id="boton-iniciar-sesion">
+          Iniciar sesión
+        </button>
+
+        <p class="modal__pie">
+          ¿Primera vez? <a id="enlace-registro">Crear cuenta gratis</a>
+        </p>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- NOTIFICACIONES EMERGENTES  -->
+  <div class="contenedor-notificaciones" id="contenedor-notificaciones" aria-live="assertive"></div>
+
+  <!-- PIE DE PÁGINA  -->
+  <footer class="pie-pagina">
+    <strong>Verdelia</strong> — Plantas &amp; Jardín<br />
+    © 2026 · Proyecto educativo · Todos los derechos reservados
+  </footer>
+
+  <!-- Script externo-->
+  <script src="js.js"></script>
+
+</body>
+</html>
